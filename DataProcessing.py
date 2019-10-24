@@ -6,7 +6,7 @@ This file contains various data process functions and auxilliary functions for t
 
 import os
 import numpy as np
-from process_PSCAD_out_files import readTraceFile
+from ProcessPSCADOutFiles import readTraceFile
 from datetime import datetime
 import csv
 from keras.utils import to_categorical
