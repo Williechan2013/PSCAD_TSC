@@ -49,7 +49,7 @@ def createModel(inDataFile, trainSettings, UCR_TEST=False):
         data = data.reshape((data.shape[0], data.shape[1], 1))
 
         # split into test and training sets
-        sss = StratifiedShuffleSplit(n_splits=1, test_size=(1-trainSplitPct))
+        sss = StratifiedShuffleSplit(n_splits=1, test_size=(1-trainSettings.trainSplitPct))
         for a, b in sss.split(data, labels):
             trainIndex = a
             testIndex = b
@@ -172,7 +172,7 @@ if (__name__ == '__main__'):
     trainSplitPct = 0.8 # pct of sample used for training
     validatePct = 0.2 # pct of sample used for training validation
     inDataFile = 'data/160k_f100_20190908-1401.txt' # input dataset
-    modelSelection = 'FCNPlus' # 'FCN' or 'ResNet' or 'FCNPlus' or 'ResNetPlus'
+    modelSelection = 'ResNet' # 'FCN' or 'ResNet' or 'FCNPlus' or 'ResNetPlus'
     iterations = 1
 
     ### ADVANCED SETTINGS ###
